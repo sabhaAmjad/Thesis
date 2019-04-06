@@ -5,8 +5,8 @@ type="weblogs websales"
 weblogs="weblogs"
 
 SPARK_SUBMIT=/usr/local/spark/spark-2.3.2-bin-hadoop2.7/bin/spark-submit
-class_test=/home/sabha/IdeaProjects/Thesis/src/main/scala/active/Consumer.scala
-JAR_File=/home/sabha/IdeaProjects/Thesis/target/Thesis-1.0-SNAPSHOT-jar-with-dependencies.jar
+class_test=//IdeaProjects/Thesis/src/main/scala/active/Consumer.scala
+JAR_File=//IdeaProjects/Thesis/target/Thesis-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
 # Initialize log file for data loading times
