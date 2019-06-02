@@ -159,7 +159,8 @@ object StructuresStreaming extends App {
     .option("header", "false")
     .option("maxFilesPerTrigger",1)
     .schema(schema_web_sales)
-    .text(path_websales)
+    .format("csv")
+    .load(path_websales)
 
 
   println(web_salesDF.isStreaming)
@@ -186,7 +187,7 @@ object StructuresStreaming extends App {
   /** ============ Start Streamqueries ========== */
 
 
-  if (queryNum.getString("inputMode")  == "s1") {
+  if (queryNum.getString("inputMode")  == "s3") {
 
     println("query 16 is executing...")
     /**========= Query 16 ========== */
@@ -205,7 +206,7 @@ object StructuresStreaming extends App {
       .start()
     query16.awaitTermination()
 
-  }else if (queryNum.getString("inputMode")  == "s2") {
+  }else if (queryNum.getString("inputMode")  == "s4") {
 
     /**========== Query 22 =========== */
     println("query 22 is executing...")
@@ -222,7 +223,7 @@ object StructuresStreaming extends App {
     //.start()
     /**query22.awaitTermination()*/
 
-  }else if (queryNum.getString("inputMode")  == "s3") {
+  }else if (queryNum.getString("inputMode")  == "s1") {
 
     println("query 5 is executing...")
     /** ========= Query 05 =========== */
@@ -238,7 +239,7 @@ object StructuresStreaming extends App {
       .outputMode(OutputMode.Complete())
     /** .start() */
     /**query05.awaitTermination()*/
-  }else if(queryNum.getString("inputMode")  == "s4") {
+  }else if(queryNum.getString("inputMode")  == "s2") {
     println("query 6 is executing...")
     /** ========= Query 06 ========= */
     /** var browsedDF = web_logsDF

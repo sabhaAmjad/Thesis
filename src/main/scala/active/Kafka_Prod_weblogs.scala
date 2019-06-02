@@ -59,7 +59,7 @@ class Kafka_Prod_weblogs (fileName : String) {
 
           }
 
-          else if (fixwind_weblogs.isEqual(window_date_0) == true) {
+          else if (fixwind_weblogs.isEqual(window_date_0)) {
             println("equal t0")
             producer.send(new ProducerRecord[String, String](topic, s"$actual_date" , s"$record" ))
             println(s"Sent: ${record.mkString} , ${actual_date}" )
@@ -72,20 +72,20 @@ class Kafka_Prod_weblogs (fileName : String) {
             }
 
 
-          } else if (fixwind_weblogs.isEqual(window_date_1) == true) {
-            println("equal t1")
-            producer.send(new ProducerRecord[String, String](topic, s"$actual_date" , s"$record" ))
-            println(s"Sent: ${record.mkString} , ${actual_date}" )
+          }
+          else if (fixwind_weblogs.isEqual(window_date_1)) {
+            println("equal t0")
+            producer.send(new ProducerRecord[String, String](topic, s"$actual_date", s"$record"))
+            println(s"Sent: ${record.mkString} , ${actual_date}")
             newlineCount += 1
             println("count " + newlineCount)
-            if (lines.hasNext == true ) {
+            if (lines.hasNext == true) {
               record = lines.next()
-            }else{
+            } else {
               cond = false
             }
-
           }
-        if (fixwind_weblogs.isAfter(window_date_1) == true) {
+        if (fixwind_weblogs.isAfter(window_date_1)) {
 
           println("wait")
           Thread.sleep(sleepTime)

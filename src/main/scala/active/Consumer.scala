@@ -7,7 +7,11 @@ import org.apache.spark.sql.streaming.OutputMode
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.types.{StringType, StructType}
 
+/*
 
+
+
+ */
 object Consumer extends App {
 
   val config_file = ConfigFactory.load("application.conf")
@@ -159,8 +163,8 @@ object Consumer extends App {
       println("Queries start now")
       /** ============ Start Streamqueries ========== */
 
-      if( Query == "s1") {
-        println("query s1 is executing...")
+      if( Query == "s3") {
+        println("query s3 is executing...")
         /** ========= Query 16 ========== */
         var web_logs_16 = web_logs
           .groupBy("wl_webpage_name").count()
@@ -176,10 +180,10 @@ object Consumer extends App {
           .outputMode(OutputMode.Complete())
           .start()
         query16.awaitTermination()
-      }else if (Query == "s2") {
+      }else if (Query == "s4") {
 
         /** ========== Query 22 =========== */
-        println("query s2 is executing...")
+        println("query s4 is executing...")
         var web_logs_22 = web_logs
           .groupBy("wl_customer_id").count()
           .orderBy("count")
@@ -192,9 +196,9 @@ object Consumer extends App {
           .outputMode(OutputMode.Complete())
         //.start()
         /** query22.awaitTermination() */
-      }else if (Query == "s3") {
+      }else if (Query == "s1") {
 
-        println("query s3 is executing...")
+        println("query s1 is executing...")
         /** ========= Query 05 =========== */
         var web_logs_05 = web_logs
           .groupBy("wl_item_id").count()
@@ -218,8 +222,8 @@ object Consumer extends App {
         .outputMode(OutputMode.Append())
         .start()
         .awaitTermination()*/
-      }else if(Query  == "s4") {
-        println("query s4 is executing...")
+      }else if(Query  == "s2") {
+        println("query s2 is executing...")
         /** ========= Query 06 ========= */
         /** var browsedDF = web_logsDF
       .sparkSession.sql("SELECT wl_item_id AS br_id, COUNT(wl_item_id) AS br_count FROM web_logs WHERE wl_item_id IS NOT NULL GROUP BY wl_item_id")
