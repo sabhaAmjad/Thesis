@@ -1,4 +1,4 @@
-# Thesis
+# Thesis Implementing the BigBench Streaming Extension using Spark and Kafka
 
 Implementing the BigBench Streaming Extension using Spark and Kafka
 
