@@ -16,7 +16,7 @@
         <maven-assembly-plugin.version>2.4</maven-assembly-plugin.version>
 
         <guava.version>11.0.2</guava.version>
-        <hadoop.version>2.7.3</hadoop.version>
+        <hadoop.version>3.2.3</hadoop.version>
         <scala.version>2.12</scala.version>
         <scala-library.version>2.12.2</scala-library.version>
         <spark.version>2.4.3</spark.version>
