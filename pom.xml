@@ -19,7 +19,7 @@
         <hadoop.version>2.7.3</hadoop.version>
         <scala.version>2.12</scala.version>
         <scala-library.version>2.12.2</scala-library.version>
-        <spark.version>2.4.3</spark.version>
+        <spark.version>3.4.0</spark.version>
 
         <db2jcc4.version>4.23.42</db2jcc4.version>
         <ojdbc8.version>12.2.0.1</ojdbc8.version>
